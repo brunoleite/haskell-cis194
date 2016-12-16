@@ -1,5 +1,6 @@
 toDigits :: Integer -> [Integer]
 toDigitsReverse :: Integer -> [Integer]
+doubleEveryOther :: [Integer] -> [Integer]
 
 toDigits n
   | n <= 0    = []
@@ -9,3 +10,7 @@ toDigits n
   | otherwise = [n]
 
 toDigitsReverse n = reverse (toDigits(n))
+
+doubleEveryOther [] = []
+doubleEveryOther (x:[]) = [x]
+doubleEveryOther (x:y:zs) = (x * 2) : y : doubleEveryOther zs
